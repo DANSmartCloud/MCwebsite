@@ -19,7 +19,7 @@
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>游戏公告-桃花源-我的世界服务器(Minecraft)</title>
+    <title>游戏公告-口袋云-我的世界服务器(Minecraft)</title>
     
     <!-- Styles -->
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
@@ -137,7 +137,7 @@
                     
                     <div class="text-container">
                         <h3>更新内容</h3>
-                        <p>2022.06.10 桃花源纯净生存-升级为1.19版本<br>2021.12.01 桃花源纯净生存-升级为1.18版本<br>2021.06.13 桃花源纯净生存-升级为1.17版本<br>2020.07.27 桃花源模组生存-开服<br>2020.07.15 桃花源纯净生存-升级为1.16版本<br>2020.07.13 桃花源纯净生存-迁移服务器成功<br>2020.07.04 桃花源纯净生存服-开服</p>
+                        <p>2022.06.10 口袋云纯净生存-升级为1.19版本<br>2021.12.01 口袋云纯净生存-升级为1.18版本<br>2021.06.13 口袋云纯净生存-升级为1.17版本<br>2020.07.27 口袋云模组生存-开服<br>2020.07.15 口袋云纯净生存-升级为1.16版本<br>2020.07.13 口袋云纯净生存-迁移服务器成功<br>2020.07.04 口袋云纯净生存服-开服</p>
                     </div> <!-- end of text-container -->
                 
                     <div class="text-container">
@@ -148,7 +148,7 @@
                     
                     <div class="text-container">
                         <h3>服务器历史(2017-至今)</h3>
-                        <p> 2017年-网易正式获得我的世界在中国的代理权<br> 2018年-“困难不掉落防爆”网易生存开服<br> 2018年-服务器改名为“桃花源”<br> 2018年-“桃花古苑”纯净生存开服<br> 2019年-“桃花源”网易空岛开服<br> 2020年-停止使用网易租赁服改用国际服<br> 2020年-“桃花源”纯净生存服开服</p>
+                        <p> 2017年-网易正式获得我的世界在中国的代理权<br> 2018年-“困难不掉落防爆”网易生存开服<br> 2018年-服务器改名为“口袋云”<br> 2018年-“桃花古苑”纯净生存开服<br> 2019年-“口袋云”网易空岛开服<br> 2020年-停止使用网易租赁服改用国际服<br> 2020年-“口袋云”纯净生存服开服</p>
                     </div> <!-- end of text-container -->
                     
                     <div class="text-container last">
@@ -184,9 +184,9 @@
                 <div class="col-md-6">
                     <div class="text-container about">
                         <h4>关于更多</h4>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">运营&美工By <a href="https://jq.qq.com/?_wv=1027&k=XokgrsUK">阿然</a></p>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">建筑By <a href="https://jq.qq.com/?_wv=1027&k=XokgrsUK">光圈</a></p>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">后台By <a href="https://jq.qq.com/?_wv=1027&k=lF0t0eUr">孤尘</a></p>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">运营By <a href="https://jq.qq.com/?_wv=1027&k=XokgrsUK">心碎小屁孩</a></p>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">建筑By <a href="https://jq.qq.com/?_wv=1027&k=XokgrsUK">浩悠科技工作室</a></p>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">前端By <a href="https://jq.qq.com/?_wv=1027&k=lF0t0eUr">禾云信创工作室-云云探索者</a></p>
                     </div>
                 </div>
             </div>
@@ -198,8 +198,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p style="color:#dfe5ec;margin-bottom:0rem"> 友情外链:&nbsp;&nbsp;<a target="_blank" href="https://pdev.top/">PDEV</a>&nbsp;&nbsp;<a target="_blank" href="https://www.optifine.net/downloads">Optifine</a>&nbsp;&nbsp;<a target="_blank" href="https://minecraft.net/">Minecraft</a>&nbsp;&nbsp;<a target="_blank" href="https://minepay.top/">MinePay</a>&nbsp;&nbsp;<a target="_blank" href="https://www.anzifan.com/">anzifan</a></p>
-                    <p class="p-small">Copyright &copy; 2022 <a target="_blank" href="index.html">桃花源</a>丨版权所有</p>
-                </div> <!-- end of col -->
+                    <p class="p-small">Copyright &copy; <span id="totalYear"></span> <a target="_blank" href="index.html">口袋云</a>丨版权所有</p>
+                                </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->
     </div> <!-- end of copyright --> 
@@ -212,5 +212,37 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="https://cdn.bootcdn.net/ajax/libs/Morphext/2.4.4/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script>(function () {
+        function getServerDate(callback) {
+            var xhr = null;
+            var now = new Date();
+
+            callback(now);
+            if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+            } else {
+                // ie
+                xhr = new ActiveObject("Microsoft");
+            }
+
+            xhr.open("GET", window.location.href, true);
+            xhr.send(null);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 2) {
+                    var dateStr = xhr.getResponseHeader("Date");
+                    console.log("dateStr =", dateStr);
+
+                    const date = dateStr ? new Date(dateStr) : now;
+                    callback && callback(date);
+                }
+            };
+        }
+
+        getServerDate(function (now) {
+            const nowYear = now.getFullYear();
+            document.getElementById("totalYear").innerText = nowYear;
+        });
+    })();</script>
 </body>
 </html>

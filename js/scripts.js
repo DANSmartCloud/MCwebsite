@@ -43,18 +43,23 @@
 
 
     /* Rotating Text - Morphtext */
-	$("#js-rotating").Morphext({
-		// The [in] animation type. Refer to Animate.css for a list of available animations.
-		animation: "fadeIn",
-		// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
-		separator: ",",
-		// The delay between the changing of each phrase in milliseconds.
-		speed: 2000,
-		complete: function () {
-			// Called after the entrance animation is executed.
-		}
+    $(document).ready(function() { // 确保DOM完全加载
+        if ($("#js-rotating").length) { // 确认元素存在
+            $("#js-rotating").typed({
+                strings: ["123", "World", "Goodbye"], // 要显示的短语数组
+                typeSpeed: 500, // 打字速度，单位是毫秒
+                backDelay: 1000, // 删除完当前短语后的延迟时间，单位是毫秒
+                loop: true, // 是否循环显示
+                contentType: 'html', // 允许插入HTML标签
+                loopCount: false, // 循环次数，false表示无限循环
+                showCursor: true, // 是否显示光标
+                cursorChar: "|", // 光标的字符
+                autoStart: true // 是否自动开始
+            });
+        } else {
+            console.error("#js-rotating element not found"); // 如果元素未找到，输出错误信息到控制台
+        }
     });
-    
 
     /* Card Slider - Swiper */
 	var cardSlider = new Swiper('.card-slider', {

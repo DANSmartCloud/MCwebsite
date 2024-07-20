@@ -175,7 +175,7 @@
                         <h4>关于更多</h4>
                         <p style="color:#dfe5ec;margin-bottom:0rem">运营&策划By <a href="https://qm.qq.com/q/w9UGEWPDO0">无脑小屁孩</a></p>
                         <p style="color:#dfe5ec;margin-bottom:0rem">建筑By <a href="https://qm.qq.com/q/w9UGEWPDO0">正在筹备</a></p>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">后台By <a href="https://qm.qq.com/q/w9UGEWPDO0">正在筹备</a></p>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">前端By <a href="https://qm.qq.com/q/w9UGEWPDO0">正在筹备</a></p>
                     </div>
                 </div>
             </div>
@@ -187,8 +187,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p style="color:#dfe5ec;margin-bottom:0rem"> 友情外链:&nbsp;&nbsp;<a target="_blank" href="https://haouou.cn/">u社区</a>&nbsp;&nbsp;
-                    <p class="p-small">Copyright &copy; 2022 <a target="_blank" href="index.html">口袋云</a>丨版权所有</p>
-                </div> <!-- end of col -->
+                    <p class="p-small">Copyright &copy; <span id="totalYear"></span> <a target="_blank" href="index.html">口袋云</a>丨版权所有</p>
+                                </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->
     </div> <!-- end of copyright --> 
@@ -208,5 +208,37 @@
     <script crossorigin="anonymous" integrity="sha384-8CYhPwYlLELodlcQV713V9ZikA3DlCVaXFDpjHfP8Z36gpddf/Vrt47XmKDsCttu" src="https://lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js"></script>
     <script src="js/js.js"></script>
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script>(function () {
+        function getServerDate(callback) {
+            var xhr = null;
+            var now = new Date();
+
+            callback(now);
+            if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+            } else {
+                // ie
+                xhr = new ActiveObject("Microsoft");
+            }
+
+            xhr.open("GET", window.location.href, true);
+            xhr.send(null);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 2) {
+                    var dateStr = xhr.getResponseHeader("Date");
+                    console.log("dateStr =", dateStr);
+
+                    const date = dateStr ? new Date(dateStr) : now;
+                    callback && callback(date);
+                }
+            };
+        }
+
+        getServerDate(function (now) {
+            const nowYear = now.getFullYear();
+            document.getElementById("totalYear").innerText = nowYear;
+        });
+    })();</script>
 </body>
 </html>
