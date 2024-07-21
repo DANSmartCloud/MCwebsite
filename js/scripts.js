@@ -43,24 +43,21 @@
 
 
     /* Rotating Text - Morphtext */
-    $(document).ready(function() { // 确保DOM完全加载
-        if ($("#js-rotating").length) { // 确认元素存在
-            $("#js-rotating").typed({
-                strings: ["123", "World", "Goodbye"], // 要显示的短语数组
-                typeSpeed: 500, // 打字速度，单位是毫秒
-                backDelay: 1000, // 删除完当前短语后的延迟时间，单位是毫秒
-                loop: true, // 是否循环显示
-                contentType: 'html', // 允许插入HTML标签
-                loopCount: false, // 循环次数，false表示无限循环
-                showCursor: true, // 是否显示光标
-                cursorChar: "|", // 光标的字符
-                autoStart: true // 是否自动开始
-            });
-        } else {
-            console.error("#js-rotating element not found"); // 如果元素未找到，输出错误信息到控制台
-        }
-    });
 
+            var typed = new Typed('#js-rotating', {
+                strings: ['晨光熹微', '琉璃梦境','樱雨缤纷','金风玉露','欢迎您！'],
+                typeSpeed: 100, // 打字速度，单位是毫秒
+    backDelay: 1500, // 删除完当前短语后的延迟时间，单位是毫秒
+    smartBackspace: true, // 添加此行，让回删操作更平滑
+    fadeOut: true,
+    loop: true, // 是否循环显示
+    contentType: 'html', // 允许插入HTML标签
+    showCursor: true, // 是否显示光标
+    cursorChar: "_", // 光标的字符
+    autoStart: true // 是否自动开始
+              });
+        
+             
     /* Card Slider - Swiper */
 	var cardSlider = new Swiper('.card-slider', {
 		autoplay: {

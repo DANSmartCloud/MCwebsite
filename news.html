@@ -1,32 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="referrer" content="no-referrer" />
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Aria is a business focused HTML landing page template built with Bootstrap to help you create lead generation websites for companies and their services.">
-    <meta name="author" content="Inovatik">
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
-
+    <meta name="baidu-site-verification" content="code-xVJuvQdcb0" />
+    <meta name="google-site-verification" content="8ITwvem-6pEqSsllOzGsqAaYVkkT9eI5UGBbP3xVaDs" />
     <!-- Website Title -->
-    <title>游戏公告-口袋云-我的世界服务器(Minecraft)</title>
+    <title>口袋云-我的世界服务器(Minecraft)</title>
     
     <!-- Styles -->
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet"><style>
+        body, html {
+        height: 2000px;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .floating-element {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 150px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: bottom 0.5s ease-in-out; /* 平滑过渡效果 */
+        text-align: center;
+    }
+    </style>
+    <style>
+        .text-gradient {
+  background-image: linear-gradient(to right, #ff5da3, #a353ff); /* 定义渐变色 */
+  -webkit-background-clip: text; /* 仅在背景上剪裁文字部分 */
+  color: transparent; /* 设置文本颜色为透明，让背景渐变可见 */
+  /* 为了兼容更多浏览器，可以添加额外的前缀或属性 */
+  background-clip: text;
+}
+    </style>
+    <style>
+        .navbar {
+    background-image: linear-gradient(-45deg, #ff906ec1, #ff76abb5, #2bc7ff83, #2dffce88);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.05);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+.dropdown-menu {
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.dropdown.show .dropdown-menu {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+    </style>
+<style>
+    /* 基础样式 */
+.server-list-btn {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-image: linear-gradient(135deg, #539bf9, #7ea7ff);
+    transition: all 0.3s ease;
+}
+
+/* 阴影效果增强视觉深度 */
+.server-list-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(83, 155, 249, 0.2), rgba(126, 167, 255, 0.2));
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+    border-radius: 3rem;
+}
+
+/* 鼠标悬停效果 */
+.server-list-btn:hover {
+    background-position: right bottom;
+    transform: translateY(-0.15rem) scale(1.02);
+    color: #fff;
+}
+
+.server-list-btn:hover::before {
+    opacity: 1;
+    transform: scaleX(1.4) scaleY(1.2);
+}
+
+/* 动画效果 - 可选，用于增加额外的动态视觉 */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px #539bf9, 0 0 20px #539bf9, 0 0 30px #539bf9, 0 0 40px #539bf9; }
+    50% { box-shadow: 0 0 20px #539bf9, 0 0 30px #7ea7ff, 0 0 40px #539bf9, 0 0 50px #7ea7ff; }
+}
+
+.server-list-btn:hover {
+    animation: glow 1s ease-in-out infinite;
+}
+</style>
+<style>
+    .component {
+    /* 组件的基础样式 */
+    position: relative; /* 初始状态相对定位 */
+    transition: transform 0.5s ease; /* 平滑过渡效果 */
+}
+
+.component-floating {
+    /* 页面滚动时，组件上浮的效果 */
+    position: fixed; /* 固定位置 */
+    top: 20px; /* 距离顶部的距离，按需调整 */
+    width: 100%; /* 根据需要调整宽度 */
+    transform: translateY(-20px); /* 向上偏移，模拟上浮效果 */
+}
+</style>
 	
 	<!-- Favicon  -->
-    <link rel="icon" href="https://s1.ax1x.com/2020/08/08/a4VB1f.png">
+    <link rel="icon" href="static/favicon.webp">
+    <style>
+        body, html {
+        height: 2000px;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .floating-element {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 150px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: bottom 0.5s ease-in-out; /* 平滑过渡效果 */
+        text-align: center;
+    }
+    </style>
+    <style>
+        .text-gradient {
+  background-image: linear-gradient(to right, #ff5da3, #a353ff); /* 定义渐变色 */
+  -webkit-background-clip: text; /* 仅在背景上剪裁文字部分 */
+  color: transparent; /* 设置文本颜色为透明，让背景渐变可见 */
+  /* 为了兼容更多浏览器，可以添加额外的前缀或属性 */
+  background-clip: text;
+}
+    </style>
+    <style>
+        .navbar {
+    background-image: linear-gradient(-45deg, #ff906ec1, #ff76abb5, #2bc7ff83, #2dffce88);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.05);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+.dropdown-menu {
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.dropdown.show .dropdown-menu {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+    </style>
+<style>
+    /* 基础样式 */
+.server-list-btn {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-image: linear-gradient(135deg, #539bf9, #7ea7ff);
+    transition: all 0.3s ease;
+}
+
+/* 阴影效果增强视觉深度 */
+.server-list-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(83, 155, 249, 0.2), rgba(126, 167, 255, 0.2));
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+    border-radius: 3rem;
+}
+
+/* 鼠标悬停效果 */
+.server-list-btn:hover {
+    background-position: right bottom;
+    transform: translateY(-0.15rem) scale(1.02);
+    color: #fff;
+}
+
+.server-list-btn:hover::before {
+    opacity: 1;
+    transform: scaleX(1.4) scaleY(1.2);
+}
+
+/* 动画效果 - 可选，用于增加额外的动态视觉 */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px #539bf9, 0 0 20px #539bf9, 0 0 30px #539bf9, 0 0 40px #539bf9; }
+    50% { box-shadow: 0 0 20px #539bf9, 0 0 30px #7ea7ff, 0 0 40px #539bf9, 0 0 50px #7ea7ff; }
+}
+
+.server-list-btn:hover {
+    animation: glow 1s ease-in-out infinite;
+}
+</style>
+<style>
+    .component {
+    /* 组件的基础样式 */
+    position: relative; /* 初始状态相对定位 */
+    transition: transform 0.5s ease; /* 平滑过渡效果 */
+}
+
+.component-floating {
+    /* 页面滚动时，组件上浮的效果 */
+    position: fixed; /* 固定位置 */
+    top: 20px; /* 距离顶部的距离，按需调整 */
+    width: 100%; /* 根据需要调整宽度 */
+    transform: translateY(-20px); /* 向上偏移，模拟上浮效果 */
+}
+</style>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -39,7 +310,6 @@
         </div>
     </div>
     <!-- end of preloader -->
-    
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
@@ -47,12 +317,12 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
                
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="https://s3.ax1x.com/2021/01/14/sUds6x.png" alt="alternative"></a>
-        
+        <a class="navbar-brand logo-image" href="index.html"><img src="static/haouou.png" alt="alternative"></a>
+
         <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
         </button>
         <!-- end of mobile menu toggle button -->
 
@@ -76,18 +346,18 @@
                     <a class="nav-link page-scroll" href="index.html#picture">风景欣赏</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="news.html#new">游戏公告</a>
+                    <a class="nav-link page-scroll" href="news.html">游戏公告</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" onclick="window.open('https://view.officeapps.live.com/op/view.aspx?src=www.ranmc.cn/banlist.xlsx')">封禁列表</a>
+                    <a class="nav-link page-scroll" href="banlist.html">封禁列表</a>
                </li>
                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">友情外链</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="https://pdev.top/"><span class="item-text">PDEV</span></a>
-                    	<div class="dropdown-items-divide-hr"></div>
+                        <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="https://minecraft.net/"><span class="item-text">Optifine</span></a>
-						<div class="dropdown-items-divide-hr"></div>
+                        <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="https://minecraft.net/"><span class="item-text">Minecraft</span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="https://minepay.top/"><span class="item-text">MinePay</span></a>
@@ -97,11 +367,9 @@
                </li>
             </ul>
         </div>
-    </nav> <!-- end of navbar -->
+    </nav>
     <!-- end of navbar -->
 
-
-    <!-- Header -->
     <header id="header" class="ex-header">
         <div class="container">
             <div class="row">
@@ -147,7 +415,7 @@
                     </div> <!-- end of text-container -->
                     
                     <div class="text-container">
-                        <h3>服务器历史(2017-至今)</h3>
+                        <h3>服务器历史(2024-至今)</h3>
                         <p> 2017年-网易正式获得我的世界在中国的代理权<br> 2018年-“困难不掉落防爆”网易生存开服<br> 2018年-服务器改名为“口袋云”<br> 2018年-“桃花古苑”纯净生存开服<br> 2019年-“口袋云”网易空岛开服<br> 2020年-停止使用网易租赁服改用国际服<br> 2020年-“口袋云”纯净生存服开服</p>
                     </div> <!-- end of text-container -->
                     
@@ -183,10 +451,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="text-container about">
-                        <h4>关于更多</h4>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">运营By <a href="https://jq.qq.com/?_wv=1027&k=XokgrsUK">心碎小屁孩</a></p>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">建筑By <a href="https://jq.qq.com/?_wv=1027&k=XokgrsUK">浩悠科技工作室</a></p>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">前端By <a href="https://jq.qq.com/?_wv=1027&k=lF0t0eUr">禾云信创工作室-云云探索者</a></p>
+                        <h4>关于我们</h4>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">运营By <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=cspy2LJuhnb1JVb25hbGV2aTqDgHL9gE&authKey=ofTBBUE97ygKveIqVhJe8pV9BSKeFeg%2FzSOgCHlabfzmRCOy4c0emqcmNgOWN2FC&noverify=0&group_code=961573130">心碎小屁孩</a></p>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">建筑By <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=cspy2LJuhnb1JVb25hbGV2aTqDgHL9gE&authKey=ofTBBUE97ygKveIqVhJe8pV9BSKeFeg%2FzSOgCHlabfzmRCOy4c0emqcmNgOWN2FC&noverify=0&group_code=961573130">浩悠科技工作室</a></p>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">前端By <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=cspy2LJuhnb1JVb25hbGV2aTqDgHL9gE&authKey=ofTBBUE97ygKveIqVhJe8pV9BSKeFeg%2FzSOgCHlabfzmRCOy4c0emqcmNgOWN2FC&noverify=0&group_code=961573130">禾云信创工作室-云云探索者</a></p>
                     </div>
                 </div>
             </div>
@@ -211,7 +479,40 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
     <script src="https://cdn.bootcdn.net/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="https://cdn.bootcdn.net/ajax/libs/Morphext/2.4.4/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="js/scripts.js"></script><script>(function () {
+        function getServerDate(callback) {
+            var xhr = null;
+            var now = new Date();
+
+            callback(now);
+            if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+            } else {
+                // ie
+                xhr = new ActiveObject("Microsoft");
+            }
+
+            xhr.open("GET", window.location.href, true);
+            xhr.send(null);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 2) {
+                    var dateStr = xhr.getResponseHeader("Date");
+                    console.log("dateStr =", dateStr);
+
+                    const date = dateStr ? new Date(dateStr) : now;
+                    callback && callback(date);
+                }
+            };
+        }
+
+        getServerDate(function (now) {
+            const nowYear = now.getFullYear();
+            document.getElementById("totalYear").innerText = nowYear;
+        });
+    })();</script>
     <script>(function () {
         function getServerDate(callback) {
             var xhr = null;
@@ -244,5 +545,139 @@
             document.getElementById("totalYear").innerText = nowYear;
         });
     })();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var component = document.querySelector('.component'); // 获取组件
+    var scrollThreshold = 100; // 设定滚动阈值，可根据实际情况调整
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > scrollThreshold) {
+            // 如果滚动距离超过阈值，添加上浮效果
+            component.classList.add('component-floating');
+        } else {
+            // 否则，移除上浮效果
+            component.classList.remove('component-floating');
+        }
+    });
+});
+    </script>
+    <script>
+        // 获取浮动元素
+        var floatingElement = document.querySelector('.floating-element');
+        // 设置初始位置
+        var startBottom = 20;
+        floatingElement.style.bottom = startBottom + 'px';
+    
+        // 监听滚动事件
+        window.addEventListener('scroll', function() {
+            // 计算已滚动的距离
+            var scrollY = window.scrollY || window.pageYOffset;
+            // 设定上浮的阈值，当滚动超过这个阈值时开始上浮
+            var floatThreshold = 100; // 可根据需要调整
+            
+            // 根据滚动距离动态改变bottom值
+            var newBottom = Math.max(startBottom - scrollY, 0); // 确保bottom不小于0
+            floatingElement.style.bottom = newBottom + 'px';
+        });
+    </script> <!-- Custom scripts -->
+    <script>(function () {
+        function getServerDate(callback) {
+            var xhr = null;
+            var now = new Date();
+
+            callback(now);
+            if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+            } else {
+                // ie
+                xhr = new ActiveObject("Microsoft");
+            }
+
+            xhr.open("GET", window.location.href, true);
+            xhr.send(null);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 2) {
+                    var dateStr = xhr.getResponseHeader("Date");
+                    console.log("dateStr =", dateStr);
+
+                    const date = dateStr ? new Date(dateStr) : now;
+                    callback && callback(date);
+                }
+            };
+        }
+
+        getServerDate(function (now) {
+            const nowYear = now.getFullYear();
+            document.getElementById("totalYear").innerText = nowYear;
+        });
+    })();</script>
+    <script>(function () {
+        function getServerDate(callback) {
+            var xhr = null;
+            var now = new Date();
+
+            callback(now);
+            if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+            } else {
+                // ie
+                xhr = new ActiveObject("Microsoft");
+            }
+
+            xhr.open("GET", window.location.href, true);
+            xhr.send(null);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 2) {
+                    var dateStr = xhr.getResponseHeader("Date");
+                    console.log("dateStr =", dateStr);
+
+                    const date = dateStr ? new Date(dateStr) : now;
+                    callback && callback(date);
+                }
+            };
+        }
+
+        getServerDate(function (now) {
+            const nowYear = now.getFullYear();
+            document.getElementById("totalYear").innerText = nowYear;
+        });
+    })();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var component = document.querySelector('.component'); // 获取组件
+    var scrollThreshold = 100; // 设定滚动阈值，可根据实际情况调整
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > scrollThreshold) {
+            // 如果滚动距离超过阈值，添加上浮效果
+            component.classList.add('component-floating');
+        } else {
+            // 否则，移除上浮效果
+            component.classList.remove('component-floating');
+        }
+    });
+});
+    </script>
+    <script>
+        // 获取浮动元素
+        var floatingElement = document.querySelector('.floating-element');
+        // 设置初始位置
+        var startBottom = 20;
+        floatingElement.style.bottom = startBottom + 'px';
+    
+        // 监听滚动事件
+        window.addEventListener('scroll', function() {
+            // 计算已滚动的距离
+            var scrollY = window.scrollY || window.pageYOffset;
+            // 设定上浮的阈值，当滚动超过这个阈值时开始上浮
+            var floatThreshold = 100; // 可根据需要调整
+            
+            // 根据滚动距离动态改变bottom值
+            var newBottom = Math.max(startBottom - scrollY, 0); // 确保bottom不小于0
+            floatingElement.style.bottom = newBottom + 'px';
+        });
+    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,11 +13,291 @@
     <!-- Styles -->
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
     <link href="https://cdn.bootcdn.net/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet"><style>
+        body, html {
+        height: 2000px;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .floating-element {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 150px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: bottom 0.5s ease-in-out; /* 平滑过渡效果 */
+        text-align: center;
+    }
+    </style>
+    <style>
+        .text-gradient {
+  background-image: linear-gradient(to right, #ff5da3, #a353ff); /* 定义渐变色 */
+  -webkit-background-clip: text; /* 仅在背景上剪裁文字部分 */
+  color: transparent; /* 设置文本颜色为透明，让背景渐变可见 */
+  /* 为了兼容更多浏览器，可以添加额外的前缀或属性 */
+  background-clip: text;
+}
+    </style>
+    <style>
+        .navbar {
+    background-image: linear-gradient(-45deg, #ff906ec1, #ff76abb5, #2bc7ff83, #2dffce88);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.05);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+.dropdown-menu {
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.dropdown.show .dropdown-menu {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+    </style>
+<style>
+    /* 基础样式 */
+.server-list-btn {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-image: linear-gradient(135deg, #539bf9, #7ea7ff);
+    transition: all 0.3s ease;
+}
+
+/* 阴影效果增强视觉深度 */
+.server-list-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(83, 155, 249, 0.2), rgba(126, 167, 255, 0.2));
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+    border-radius: 3rem;
+}
+
+/* 鼠标悬停效果 */
+.server-list-btn:hover {
+    background-position: right bottom;
+    transform: translateY(-0.15rem) scale(1.02);
+    color: #fff;
+}
+
+.server-list-btn:hover::before {
+    opacity: 1;
+    transform: scaleX(1.4) scaleY(1.2);
+}
+
+/* 动画效果 - 可选，用于增加额外的动态视觉 */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px #539bf9, 0 0 20px #539bf9, 0 0 30px #539bf9, 0 0 40px #539bf9; }
+    50% { box-shadow: 0 0 20px #539bf9, 0 0 30px #7ea7ff, 0 0 40px #539bf9, 0 0 50px #7ea7ff; }
+}
+
+.server-list-btn:hover {
+    animation: glow 1s ease-in-out infinite;
+}
+</style>
+<style>
+    .component {
+    /* 组件的基础样式 */
+    position: relative; /* 初始状态相对定位 */
+    transition: transform 0.5s ease; /* 平滑过渡效果 */
+}
+
+.component-floating {
+    /* 页面滚动时，组件上浮的效果 */
+    position: fixed; /* 固定位置 */
+    top: 20px; /* 距离顶部的距离，按需调整 */
+    width: 100%; /* 根据需要调整宽度 */
+    transform: translateY(-20px); /* 向上偏移，模拟上浮效果 */
+}
+</style>
 	
 	<!-- Favicon  -->
-    <link rel="icon" href="https://s1.ax1x.com/2020/08/08/a4VB1f.png">
+    <link rel="icon" href="static/favicon.webp">
+    <style>
+        body, html {
+        height: 2000px;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .floating-element {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 150px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: bottom 0.5s ease-in-out; /* 平滑过渡效果 */
+        text-align: center;
+    }
+    </style>
+    <style>
+        .text-gradient {
+  background-image: linear-gradient(to right, #ff5da3, #a353ff); /* 定义渐变色 */
+  -webkit-background-clip: text; /* 仅在背景上剪裁文字部分 */
+  color: transparent; /* 设置文本颜色为透明，让背景渐变可见 */
+  /* 为了兼容更多浏览器，可以添加额外的前缀或属性 */
+  background-clip: text;
+}
+    </style>
+    <style>
+        .navbar {
+    background-image: linear-gradient(-45deg, #ff906ec1, #ff76abb5, #2bc7ff83, #2dffce88);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+}
 
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.05);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+.dropdown-menu {
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.dropdown.show .dropdown-menu {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+    </style>
+<style>
+    /* 基础样式 */
+.server-list-btn {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-image: linear-gradient(135deg, #539bf9, #7ea7ff);
+    transition: all 0.3s ease;
+}
+
+/* 阴影效果增强视觉深度 */
+.server-list-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(83, 155, 249, 0.2), rgba(126, 167, 255, 0.2));
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+    border-radius: 3rem;
+}
+
+/* 鼠标悬停效果 */
+.server-list-btn:hover {
+    background-position: right bottom;
+    transform: translateY(-0.15rem) scale(1.02);
+    color: #fff;
+}
+
+.server-list-btn:hover::before {
+    opacity: 1;
+    transform: scaleX(1.4) scaleY(1.2);
+}
+
+/* 动画效果 - 可选，用于增加额外的动态视觉 */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px #539bf9, 0 0 20px #539bf9, 0 0 30px #539bf9, 0 0 40px #539bf9; }
+    50% { box-shadow: 0 0 20px #539bf9, 0 0 30px #7ea7ff, 0 0 40px #539bf9, 0 0 50px #7ea7ff; }
+}
+
+.server-list-btn:hover {
+    animation: glow 1s ease-in-out infinite;
+}
+</style>
+<style>
+    .component {
+    /* 组件的基础样式 */
+    position: relative; /* 初始状态相对定位 */
+    transition: transform 0.5s ease; /* 平滑过渡效果 */
+}
+
+.component-floating {
+    /* 页面滚动时，组件上浮的效果 */
+    position: fixed; /* 固定位置 */
+    top: 20px; /* 距离顶部的距离，按需调整 */
+    width: 100%; /* 根据需要调整宽度 */
+    transform: translateY(-20px); /* 向上偏移，模拟上浮效果 */
+}
+</style>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -37,7 +317,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
                
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="https://s3.ax1x.com/2021/01/14/sUds6x.png" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="index.html"><img src="static/haouou.png" alt="alternative"></a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation">
@@ -97,11 +377,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-container">
-                            <h1>口袋世界 <span> 晨曦熹微, 琉光梦境, 樱雨缤纷, 金风玉露</span></h1>
-                            <p id="js-rotating"></p>
-                            <p style="color:white;margin-top:4rem">我的世界口袋云服务器</p>
+                            <h1>口袋世界 <span id="js-rotating" class="text-gradient"></span></h1>
+                            <p style="color:white;margin-top:4rem;background-color: #539bf9a1;backdrop-filter: blur(10px);" class="floating-element">我的世界口袋云服务器</p>
                             <p style="color:white;margin-bottom:3rem">服务器正常运行中！欢迎加入我们！</p>
-                            <a class="btn-solid-lg page-scroll" href="index.html#list" target="_blank">服务器列表</a>
+                            <a class="server-list-btn" href="index.html#list" target="_blank">服务器列表</a>
                         </div>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -118,13 +397,13 @@
                 <div class="col-lg-5">
                     <div class="text-container">
                         <h2>口袋云欢迎您</h2>
-                        <p>&nbsp;&nbsp;这是一个温馨和谐的服务器，提供了稳定流畅的体验，自从2017开服以来我们努力创建一个环境良好更公平公正的游戏氛围，和玩家们一起度过了很多愉快的时光,在这里的日子将会是你值得回忆的美好。<br>我们保证不做影响平衡、破坏公平的行为。服务器暂时不开放白名单，欢迎玩家提出意见或者举报违规行为，请大家自觉遵守游戏规则。</p>
+                        <p>&nbsp;&nbsp;这是一个温馨和谐的服务器，提供了稳定流畅的体验，是由禾云信创工作室与浩悠科技工作室联合打造的精品。自从2024开服以来我们努力创建一个环境良好更公平公正的游戏氛围，和玩家们一起度过了很多愉快的时光,在这里的日子将会是你值得回忆的美好。<br>我们保证不做影响平衡、破坏公平的行为。服务器暂时不开放白名单，欢迎玩家提出意见或者举报违规行为，请大家自觉遵守游戏规则。</p>
                         <font color="#484a46"><p id="poem-author" style="font-weight: bold"></p></font>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-7">
                     <div class="image-container">
-                        <img class="img-fluid" src="https://s1.ax1x.com/2020/08/08/a4Vyng.jpg" alt="alternative">
+                        <img class="img-fluid" src="static/Biglogo.png" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -154,7 +433,7 @@
                             <p class="price"><a style="color:#484a46" href="spigotserver.html">详情</a></p>
                         </div>
                         <div class="button-container">
-                            <a class="btn-solid-reg page-scroll" href="https://jq.qq.com/?_wv=1027&k=XokgrsUK" target="_blank">点击加群</a>
+                            <a class="btn-solid-reg page-scroll" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=cspy2LJuhnb1JVb25hbGV2aTqDgHL9gE&authKey=ofTBBUE97ygKveIqVhJe8pV9BSKeFeg%2FzSOgCHlabfzmRCOy4c0emqcmNgOWN2FC&noverify=0&group_code=961573130" target="_blank">点击加群</a>
                         </div> <!-- end of button-container -->
                     </div>
                     <!-- end of card -->
@@ -171,7 +450,7 @@
                             <p class="price"><a class="price" href="modserver.html">详情</a></p>
                         </div>
                         <div class="button-container">
-                            <a class="btn-solid-reg page-scroll" href="https://jq.qq.com/?_wv=1027&k=lF0t0eUr" target="_blank">点击加群</a>
+                            <a class="btn-solid-reg page-scroll" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=cspy2LJuhnb1JVb25hbGV2aTqDgHL9gE&authKey=ofTBBUE97ygKveIqVhJe8pV9BSKeFeg%2FzSOgCHlabfzmRCOy4c0emqcmNgOWN2FC&noverify=0&group_code=961573130" target="_blank">点击加群</a>
                         </div> <!-- end of button-container -->
                     </div>
                     <!-- end of card -->
@@ -211,11 +490,11 @@
                 <div class="col-lg-12">
                     <!-- Filter -->
                     <div class="button-group filters-button-group">
-                        <a class="button is-checked" data-filter="*"><span>显示全部</span></a>
-                        <a class="button" data-filter=".design"><span>主城风景</span></a>
-                        <a class="button" data-filter=".development"><span>宣传海报</span></a>
-                        <a class="button" data-filter=".marketing"><span>玩家合照</span></a>
-                        <a class="button" data-filter=".seo"><span>玩家建筑</span></a>
+                        <a class="button is-checked fancy-button" data-filter="*"><span>显示全部</span></a>
+                        <a class="button fancy-button" data-filter=".design"><span>主城风景</span></a>
+                        <a class="button fancy-button" data-filter=".development"><span>宣传海报</span></a>
+                        <a class="button fancy-button" data-filter=".marketing"><span>玩家合照</span></a>
+                        <a class="button fancy-button" data-filter=".seo"><span>玩家建筑</span></a>
                     </div> <!-- end of button group -->
                     <div class="grid">
                         <div class="element-item design">
@@ -431,10 +710,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="text-container about">
-                        <h4>关于更多</h4>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">运营By <a href="https://jq.qq.com/?_wv=1027&k=XokgrsUK">心碎小屁孩</a></p>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">建筑By <a href="https://jq.qq.com/?_wv=1027&k=XokgrsUK">浩悠科技工作室</a></p>
-                        <p style="color:#dfe5ec;margin-bottom:0rem">前端By <a href="https://jq.qq.com/?_wv=1027&k=lF0t0eUr">禾云信创工作室-云云探索者</a></p>
+                        <h4>关于我们</h4>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">运营By <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=cspy2LJuhnb1JVb25hbGV2aTqDgHL9gE&authKey=ofTBBUE97ygKveIqVhJe8pV9BSKeFeg%2FzSOgCHlabfzmRCOy4c0emqcmNgOWN2FC&noverify=0&group_code=961573130">心碎小屁孩</a></p>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">建筑By <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=cspy2LJuhnb1JVb25hbGV2aTqDgHL9gE&authKey=ofTBBUE97ygKveIqVhJe8pV9BSKeFeg%2FzSOgCHlabfzmRCOy4c0emqcmNgOWN2FC&noverify=0&group_code=961573130">浩悠科技工作室</a></p>
+                        <p style="color:#dfe5ec;margin-bottom:0rem">前端By <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=cspy2LJuhnb1JVb25hbGV2aTqDgHL9gE&authKey=ofTBBUE97ygKveIqVhJe8pV9BSKeFeg%2FzSOgCHlabfzmRCOy4c0emqcmNgOWN2FC&noverify=0&group_code=961573130">禾云信创工作室-云云探索者</a></p>
                     </div>
                 </div>
             </div>
@@ -462,7 +741,105 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/Morphext/2.4.4/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts.js"></script><script>(function () {
+        function getServerDate(callback) {
+            var xhr = null;
+            var now = new Date();
+
+            callback(now);
+            if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+            } else {
+                // ie
+                xhr = new ActiveObject("Microsoft");
+            }
+
+            xhr.open("GET", window.location.href, true);
+            xhr.send(null);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 2) {
+                    var dateStr = xhr.getResponseHeader("Date");
+                    console.log("dateStr =", dateStr);
+
+                    const date = dateStr ? new Date(dateStr) : now;
+                    callback && callback(date);
+                }
+            };
+        }
+
+        getServerDate(function (now) {
+            const nowYear = now.getFullYear();
+            document.getElementById("totalYear").innerText = nowYear;
+        });
+    })();</script>
+    <script>(function () {
+        function getServerDate(callback) {
+            var xhr = null;
+            var now = new Date();
+
+            callback(now);
+            if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+            } else {
+                // ie
+                xhr = new ActiveObject("Microsoft");
+            }
+
+            xhr.open("GET", window.location.href, true);
+            xhr.send(null);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 2) {
+                    var dateStr = xhr.getResponseHeader("Date");
+                    console.log("dateStr =", dateStr);
+
+                    const date = dateStr ? new Date(dateStr) : now;
+                    callback && callback(date);
+                }
+            };
+        }
+
+        getServerDate(function (now) {
+            const nowYear = now.getFullYear();
+            document.getElementById("totalYear").innerText = nowYear;
+        });
+    })();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var component = document.querySelector('.component'); // 获取组件
+    var scrollThreshold = 100; // 设定滚动阈值，可根据实际情况调整
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > scrollThreshold) {
+            // 如果滚动距离超过阈值，添加上浮效果
+            component.classList.add('component-floating');
+        } else {
+            // 否则，移除上浮效果
+            component.classList.remove('component-floating');
+        }
+    });
+});
+    </script>
+    <script>
+        // 获取浮动元素
+        var floatingElement = document.querySelector('.floating-element');
+        // 设置初始位置
+        var startBottom = 20;
+        floatingElement.style.bottom = startBottom + 'px';
+    
+        // 监听滚动事件
+        window.addEventListener('scroll', function() {
+            // 计算已滚动的距离
+            var scrollY = window.scrollY || window.pageYOffset;
+            // 设定上浮的阈值，当滚动超过这个阈值时开始上浮
+            var floatThreshold = 100; // 可根据需要调整
+            
+            // 根据滚动距离动态改变bottom值
+            var newBottom = Math.max(startBottom - scrollY, 0); // 确保bottom不小于0
+            floatingElement.style.bottom = newBottom + 'px';
+        });
+    </script> <!-- Custom scripts -->
     <script>(function () {
         function getServerDate(callback) {
             var xhr = null;
@@ -527,5 +904,40 @@
             document.getElementById("totalYear").innerText = nowYear;
         });
     })();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var component = document.querySelector('.component'); // 获取组件
+    var scrollThreshold = 100; // 设定滚动阈值，可根据实际情况调整
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > scrollThreshold) {
+            // 如果滚动距离超过阈值，添加上浮效果
+            component.classList.add('component-floating');
+        } else {
+            // 否则，移除上浮效果
+            component.classList.remove('component-floating');
+        }
+    });
+});
+    </script>
+    <script>
+        // 获取浮动元素
+        var floatingElement = document.querySelector('.floating-element');
+        // 设置初始位置
+        var startBottom = 20;
+        floatingElement.style.bottom = startBottom + 'px';
+    
+        // 监听滚动事件
+        window.addEventListener('scroll', function() {
+            // 计算已滚动的距离
+            var scrollY = window.scrollY || window.pageYOffset;
+            // 设定上浮的阈值，当滚动超过这个阈值时开始上浮
+            var floatThreshold = 100; // 可根据需要调整
+            
+            // 根据滚动距离动态改变bottom值
+            var newBottom = Math.max(startBottom - scrollY, 0); // 确保bottom不小于0
+            floatingElement.style.bottom = newBottom + 'px';
+        });
+    </script>
 </body>
 </html>

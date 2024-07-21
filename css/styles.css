@@ -71,7 +71,7 @@ a:hover {
 }
 
 a.green {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 a.white,
@@ -92,16 +92,16 @@ strong {
 }
 
 .section-title {
-	color: #ff80ab;
+	color: #539bf9;
 	font: 500 0.8125rem/1.125rem "Montserrat", sans-serif;
 }
 
 .btn-solid-reg {
 	display: inline-block;
 	padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
-	border: 0.125rem solid #ff80ab;
+	border: 0.125rem solid #539bf9;
 	border-radius: 0.25rem;
-	background-color: #ff80ab;
+	background-color: #539bf9;
 	color: #fff;
 	font: 700 0.75rem/0 "Montserrat", sans-serif;
 	text-decoration: none;
@@ -110,28 +110,36 @@ strong {
 
 .btn-solid-reg:hover {
 	background-color: transparent;
-	color: #ff80ab;
+	color: #539bf9;
 	text-decoration: none;
 }
 
 .btn-solid-lg {
 	display: inline-block;
-	padding: 1.375rem 2.125rem 1.375rem 2.125rem;
-	border: 0.125rem solid #ff80ab;
-	border-radius: 0.25rem;
-	background-color: #ff80ab;
-	color: #fff;
-	font: 700 0.75rem/0 "Montserrat", sans-serif;
+	padding: 1.375rem 2.125rem;
+	border: none;
+	border-radius: 0.5rem;
+	background: radial-gradient(circle at center, #539bf9, #4a8be4);
+	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+	color: #ffffff;
+	font: 700 0.6875rem/1 "Roboto", sans-serif;
+	text-align: center;
+	text-transform: uppercase;
 	text-decoration: none;
-	transition: all 0.2s;
+	transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .btn-solid-lg:hover {
-	background-color: transparent;
-	color: #ff80ab;
-	text-decoration: none;
+	background-position: center;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	transform: translateY(-0.125rem);
 }
 
+.btn-solid-lg:active {
+	box-shadow: inset 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+	background: radial-gradient(circle at center, #4a8be4, #3f77d3);
+	transform: translateY(0);
+}
 .btn-outline-reg {
 	display: inline-block;
 	padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
@@ -326,9 +334,9 @@ input[type='checkbox'] {
 	display: inline-block;
 	width: 100%;
 	height: 3.125rem;
-	border: 0.125rem solid #ff80ab;
+	border: 0.125rem solid #539bf9;
 	border-radius: 0.25rem;
-	background-color: #ff80ab;
+	background-color: #539bf9;
 	color: #fff;
 	font: 700 0.75rem/1.75rem "Montserrat", sans-serif;
 	cursor: pointer;
@@ -337,7 +345,7 @@ input[type='checkbox'] {
 
 .form-control-submit-button:hover {
 	background-color: transparent;
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 /* Form Success And Error Message Formatting */
@@ -631,7 +639,7 @@ input[type='checkbox'] {
 
 .navbar-custom .nav-item .nav-link:hover,
 .navbar-custom .nav-item .nav-link.active {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 /* Dropdown Menu */
@@ -676,7 +684,7 @@ input[type='checkbox'] {
 }
 
 .navbar-custom .dropdown-item:hover .item-text {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 .navbar-custom .dropdown-items-divide-hr {
@@ -890,7 +898,7 @@ input[type='checkbox'] {
 }
 
 .cards-2 .list-unstyled .fas {
-	color: #ff80ab;
+	color: #539bf9;
 	font-size: 0.5rem;
 	line-height: 1.375rem;
 }
@@ -907,7 +915,7 @@ input[type='checkbox'] {
 }
 
 .cards-2 .price span {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 .cards-2 .button-container {
@@ -955,9 +963,9 @@ input[type='checkbox'] {
 	width: 2.25rem;
 	height: 2.25rem;
 	margin-right: 0.875rem;
-	border: 0.125rem solid #ff80ab;
+	border: 0.125rem solid #539bf9;
 	border-radius: 50%;
-	background-color: #ff80ab;
+	background-color: #539bf9;
 	color: #fff;
 	font: 700 1rem/2.125rem "Montserrat", sans-serif;
 	text-align: center;
@@ -973,8 +981,8 @@ input[type='checkbox'] {
 }
 
 .accordion .item:hover span[aria-expanded="false"] .circle-numbering {
-	border: 0.125rem solid #ff80ab;
-	color: #ff80ab;
+	border: 0.125rem solid #539bf9;
+	color: #539bf9;
 }
 
 .accordion .accordion-title {
@@ -990,11 +998,11 @@ input[type='checkbox'] {
 }
 
 .accordion .item:hover .accordion-title {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 .accordion span[aria-expanded="true"] .accordion-title {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 .accordion .accordion-body {
@@ -1033,7 +1041,7 @@ input[type='checkbox'] {
 
 .tabs .nav-link:hover,
 .tabs .nav-link.active {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 .tabs .nav-link .fas {
@@ -1063,7 +1071,7 @@ input[type='checkbox'] {
 	display: block;
 	padding-left: 1.5rem;
 	border-radius: 0.125rem;
-	background: linear-gradient(to bottom right, #ff80ab, #1bd1a7);
+	background: linear-gradient(to bottom right, #539bf9, #1bd1a7);
 }
 
 .tabs #tab-1 .progress-bar.first {
@@ -1089,7 +1097,7 @@ input[type='checkbox'] {
 }
 
 .tabs #tab-2 .list-unstyled .media-bullet {
-	color: #ff80ab;
+	color: #539bf9;
 	font-weight: 600;
 	font-size: 2rem;
 	line-height: 2rem;
@@ -1100,7 +1108,7 @@ input[type='checkbox'] {
 }
 
 .tabs #tab-3 .list-unstyled .fas {
-	color: #ff80ab;
+	color: #539bf9;
 	font-size: 0.5rem;
 	line-height: 1.375rem;
 }
@@ -1213,7 +1221,7 @@ input[type='checkbox'] {
 }
 
 .form-1 .list-unstyled .fas {
-	color: #ff80ab;
+	color: #539bf9;
 	font-size: 0.5rem;
 	line-height: 1.375rem;
 }
@@ -1291,19 +1299,19 @@ input[type='checkbox'] {
 	padding: 0.3125rem 1.375rem 0.25rem 1.375rem;
 	border-radius: 0.25rem;
 	background-color: #f1f4f7;
-	color: #7b7e85;
+	color: #dee2e6;
 	font: 700 0.75rem/1.25rem "Montserrat", sans-serif;
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
 
 .filter .button-group a:hover {
-	background-color: #ff80ab;
+	background-color: #539bf9;
 	color: #fff;
 }
 
 .filter .button-group a.button.is-checked {
-	background-color: #ff80ab;
+	background-color: #539bf9;
 	color: #fff;
 }
 
@@ -1385,7 +1393,7 @@ input[type='checkbox'] {
 	margin-bottom: 0.625rem;
 	margin-left: 0;
 	border: none;
-	background-color: #ff80ab;
+	background-color: #539bf9;
 }
 
 .lightbox-basic h6 {
@@ -1516,7 +1524,7 @@ input[type='checkbox'] {
 }
 
 .basic-2 .fa-stack:hover .fa-stack-1x {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 
@@ -1549,7 +1557,7 @@ input[type='checkbox'] {
 }
 
 .counter .list-unstyled .fas {
-	color: #ff80ab;
+	color: #539bf9;
 	font-size: 0.5rem;
 	line-height: 1.375rem;
 }
@@ -1571,7 +1579,7 @@ input[type='checkbox'] {
 .counter #counter .counter-value {
 	display: inline-block;
 	margin-bottom: 0.125rem;
-	color: #ff80ab;
+	color: #539bf9;
 	font: 700 2.875rem/3.25rem "Montserrat", sans-serif;
 	vertical-align: middle;
 }
@@ -1616,7 +1624,7 @@ input[type='checkbox'] {
 .form-2 .list-unstyled .fab {
 	margin-right: 0.5rem;
 	font-size: 0.875rem;
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 .form-2 .list-unstyled .fa-phone {
@@ -1657,7 +1665,7 @@ input[type='checkbox'] {
 }
 
 .form-2 .fa-stack:hover .fa-stack-1x {
-	color: #ff80ab;
+	color: #539bf9;
 }
 
 
@@ -1714,7 +1722,7 @@ a.back-to-top {
 	width: 2.625rem;
 	height: 2.625rem;
 	border-radius: 1.875rem;
-	background: #ff80ab url("https://img01.sogoucdn.com/app/a/100520146/0B586A7D085D120376A66E886388F822") no-repeat center 47%;
+	background: #539bf9 url("https://img01.sogoucdn.com/app/a/100520146/0B586A7D085D120376A66E886388F822") no-repeat center 47%;
 	background-size: 1.125rem 1.125rem;
 	text-indent: -9999px;
 }
@@ -1771,7 +1779,7 @@ a:hover.back-to-top {
 }
 
 .ex-basic-2 .list-unstyled .fas {
-	color: #ff80ab;
+	color: #539bf9;
 	font-size: 0.5rem;
 	line-height: 1.375rem;
 }
@@ -1826,7 +1834,7 @@ a:hover.back-to-top {
 	
 	.navbar-custom .nav-item .nav-link:hover,
 	.navbar-custom .nav-item .nav-link.active {
-		color: #ff80ab;
+		color: #539bf9;
 	}
 
 	.navbar-custom.top-nav-collapse {
@@ -1845,7 +1853,7 @@ a:hover.back-to-top {
 	
 	.navbar-custom.top-nav-collapse .nav-item .nav-link:hover,
 	.navbar-custom.top-nav-collapse .nav-item .nav-link.active {
-		color: #ff80ab;
+		color: #539bf9;
 	}
 
 	.navbar-custom .dropdown-menu {
@@ -2017,7 +2025,7 @@ a:hover.back-to-top {
 	}
 
 	.navbar-custom .fa-stack:hover .fa-stack-1x {
-		color: #ff80ab;
+		color: #539bf9;
 	}
 	/* end of navigation */
 
@@ -2395,3 +2403,105 @@ a:hover.back-to-top {
 	/* end of navigation */
 }
 /* end of min-width width 1200px */
+
+/* 基础样式 */
+.btn-solid-reg.page-scroll {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.25rem;
+    background-color: #539bf9; /* 蓝色背景 */
+    color: #ffffff; /* 文字白色 */
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* 鼠标悬停效果 */
+.btn-solid-reg.page-scroll:hover {
+    background-color: #4a8be4; /* 更深的蓝色，增加深度感 */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.125rem); /* 微妙上移 */
+}
+
+/* 按下状态 */
+.btn-solid-reg.page-scroll:active {
+    box-shadow: inset 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+/* 可选的渐变背景 */
+.btn-solid-reg.page-scroll.gradient {
+    background-image: linear-gradient(to right, #539bf9, #7ea7ff);
+    background-size: 200%;
+    transition: background-position 0.3s ease;
+}
+
+.btn-solid-reg.page-scroll.gradient:hover {
+    background-position: right center;
+}
+
+/* 基础样式 */
+.fancy-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    background-image: linear-gradient(135deg, #539bf9, #7ea7ff);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* 鼠标悬停效果 */
+.fancy-button:hover {
+    background-position: right center; /* 如果使用了渐变，可以改变渐变方向 */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* 按下状态 */
+.fancy-button:active {
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+/* 内部文字阴影效果 */
+.fancy-button span {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 2px rgba(0, 234, 255, 0.781);
+}
+
+/* 可选的额外效果：按钮上的动态光圈 */
+.fancy-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(116, 232, 255);
+    border-radius: 30px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.fancy-button:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
